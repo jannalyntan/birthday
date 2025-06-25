@@ -18,6 +18,12 @@ h1 {
   font-style: normal;
   margin: 10px;
 }
+h2 {
+  font-family: "Figtree", sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  margin: 30px;
+}
 
 p {
   font-family: "Figtree", sans-serif;
@@ -31,6 +37,15 @@ button {
   margin: 10px;
 }
 
+button:hover {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px;
+  scale: 1.1;
+}
+
 input {
   width: 300px;
   height: 30px;
@@ -38,4 +53,157 @@ input {
 
 .hidden {
   display: none;
+}
+
+/*-----------------------------------
+Question 1
+--------------------------------------*/
+.photo-grid {
+  display: flex;
+  gap: 20px;
+  overflow: s visible;
+  margin: 20px;
+}
+
+.photo-grid-1 {
+  display: flex;
+  gap: 20px;
+  overflow: s visible;
+  margin: 20px;
+}
+
+.photo-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.photo-container-1 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.photo-container img {
+  width: 320px;
+  height: auto;
+  display: block;
+  transition: 0.3s ease;
+  filter: brightness(100%);
+  border-radius: 10px;
+}
+
+/* Darken image on hover */
+.photo-container:hover img {
+  filter: brightness(10%);
+}
+
+/* Centered overlay text */
+.overlay-text {
+  font-family: "Figtree", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Reveal text on hover */
+.photo-container:hover .overlay-text {
+  opacity: 1;
+}
+
+/*-----------------------------------
+progress bar
+--------------------------------------*/
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #ff69b4; /* pink or any theme color */
+  transition: width 0.3s ease;
+}
+
+/*-----------------------------------
+simple right
+--------------------------------------*/
+
+.simple-right {
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.simple-right:not(.hidden) {
+  opacity: 1;
+}
+
+#countdown-1,
+#countdown-2 {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+/*-----------------------------------
+popup
+--------------------------------------*/
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 40px 100px;
+  border-radius: 15px;
+  text-align: center;
+  font-family: "Figtree", sans-serif;
+}
+
+/*-----------------------------------
+photo selected
+--------------------------------------*/
+
+.selectable {
+  border: 4px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
+.selectable.selected {
+  transform: scale(1.05);
+  z-index: 100000;
+  filter: saturate(0%);
+  border-radius: 10px;
 }

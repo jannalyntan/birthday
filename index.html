@@ -11,12 +11,16 @@
   </head>
 
   <body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
     <div class="intro hidden">
       <h1>Hello Zwe,</h1>
       <p>
         This is your birthday suprise from your one and only high school kid!
       </p>
-      <button>Start</button>
+      <button class="intro-btn">Start</button>
     </div>
 
     <div class="how-to hidden">
@@ -27,19 +31,25 @@
         <br />
         Simple right?
       </p>
-      <button>Continue</button>
+      <button class="how-to-btn">Continue</button>
     </div>
 
-    <div class="Task1 hidden">
+    <div class="simple-right hidden">
+      <h1>Simple Right!</h1>
+      <p>Let's Start</p>
+      <p id="countdown-1">Starting in 5...</p>
+    </div>
+
+    <div class="task1 hidden">
       <h1>Task 1</h1>
       <p>
         Want your keyword? Give something to your favourite girl that she can’t
         resist.
       </p>
 
-      <input type="text" />
+      <input type="text" placeholder="keyword here" class="task-1-input" />
       <br />
-      <button>Continue</button>
+      <button class="task-1-btn">Continue</button>
     </div>
 
     <div class="reward1 hidden">
@@ -47,32 +57,45 @@
       <p>
         Simple right!
         <br />
-        Here is your reward!
+        Here is your first reward!
       </p>
 
-      <button>Continue</button>
+      <button class="reward-1-btn">Continue</button>
     </div>
 
-    <div class="Question1 hidden">
+    <div class="too-simple-right hidden">
+      <h1>That was too simple...</h1>
+      <p>Let's make that harder</p>
+      <p id="countdown-2">Continuing in 5...</p>
+    </div>
+
+    <div class="Question1">
       <h1>Question 1</h1>
       <p>Which photo below is my favourite picture of you?</p>
-      <div class="photo-grid">
-        <img src="photo/photo-1.jpeg" alt="photo-1" width="320px" />
-        <img src="photo/photo-2.jpeg" alt="photo-2" width="320px" />
+      <div class="photo-grid-1">
+        <div class="photo-container-1">
+          <img src="photo/photo-1.jpeg" alt="photo-1" class="selectable" />
+        </div>
+        <div class="photo-container-1">
+          <img src="photo/photo-2.jpeg" alt="photo-2" class="selectable" />
+        </div>
       </div>
-      <div class="photo-grid">
-        <img src="photo/photo-3.jpeg" alt="photo-3" width="320px" />
-        <img src="photo/photo-4.jpeg" alt="photo-4" width="320px" />
+      <div class="photo-grid-1">
+        <div class="photo-container-1">
+          <img src="photo/photo-3.jpeg" alt="photo-3" class="selectable" />
+        </div>
+        <div class="photo-container-1">
+          <img src="photo/photo-4.jpeg" alt="photo-4" class="selectable" />
+        </div>
       </div>
-      <br />
-      <button>Confirm</button>
+      <button class="question-1-btn">Confirm</button>
     </div>
 
     <div class="Question1-reveal hidden">
       <h1>Wrong!</h1>
       <p>However, I'll give you a pass since they are all my favourite!</p>
 
-      <button>Reveal</button>
+      <button class="question-1-reveal-btn">Reveal</button>
     </div>
 
     <div class="Question1-reveal-1 hidden">
@@ -148,7 +171,7 @@
         </div>
       </section>
 
-      <button>Confirm</button>
+      <button class="question-1-reveal-btn-1">Continue</button>
     </div>
 
     <div class="Question2 hidden">
@@ -160,7 +183,7 @@
       <button>Continue</button>
     </div>
 
-    <div class="FinalPresent">
+    <div class="FinalPresent hidden">
       <h1>Reward</h1>
       <p>
         Cogratulation of completing this, here is your bday gift. I hope you
@@ -171,8 +194,17 @@
         you enjoy ur bday. Sorry if it is very lame lol.
       </p>
 
-      <br />
-      <button>Continue</button>
+      <p>From your high school kid.</p>
+
+      <button>Finish</button>
+    </div>
+
+    <div class="popup hidden" id="custom-popup">
+      <div class="popup-content">
+        <h1>Try Again...</h1>
+        <p id="popup-message">Here is my text</p>
+        <button id="popup-close">Retry</button>
+      </div>
     </div>
   </body>
 </html>
