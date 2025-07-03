@@ -61,14 +61,14 @@ Question 1
 .photo-grid {
   display: flex;
   gap: 20px;
-  overflow: s visible;
+  overflow: visible;
   margin: 20px;
 }
 
 .photo-grid-1 {
   display: flex;
   gap: 20px;
-  overflow: s visible;
+  overflow: visible;
   margin: 20px;
 }
 
@@ -85,6 +85,15 @@ Question 1
 }
 
 .photo-container img {
+  width: 320px;
+  height: auto;
+  display: block;
+  transition: 0.3s ease;
+  filter: brightness(100%);
+  border-radius: 10px;
+}
+
+.photo-container-1 img {
   width: 320px;
   height: auto;
   display: block;

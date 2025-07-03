@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Total number of steps (adjust if you add/remove sections)
+  // Total number of steps
   let selectedImage = null;
-
   const totalSteps = 8;
   let currentStep = 1;
 
@@ -22,33 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Intro
-  const intro = document.querySelector(".intro");
-  console.log(intro);
-
-  const howTo = document.querySelector(".how-to");
-  console.log(howTo);
-
   const introbtn = document.querySelector(".intro-btn");
-  console.log(introbtn);
-
   introbtn.addEventListener("click", function () {
     goToNextStep("intro", "how-to");
   });
 
-  // How to
+  // How-to
   const howToBtn = document.querySelector(".how-to-btn");
-  console.log(howToBtn);
-
-  const task1 = document.querySelector(".task1");
-  console.log(task1);
-
   howToBtn.addEventListener("click", function () {
     goToNextStep("how-to", "simple-right");
 
-    // Simple Right
+    // Countdown
     const countdownEl = document.getElementById("countdown-1");
-
-    // Start 5-second countdown
     let seconds = 5;
     countdownEl.textContent = `Starting in ${seconds}...`;
 
@@ -63,26 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 
-  // Key In
+  // Task 1
   const task1Btn = document.querySelector(".task-1-btn");
-  console.log(task1Btn);
-
   const task1Input = document.querySelector(".task-1-input");
-  console.log(task1Input);
-
   const popup = document.getElementById("custom-popup");
-
   const popupMessage = document.getElementById("popup-message");
-
   const popupClose = document.getElementById("popup-close");
 
-  // Function to show popup
   function showPopup(message) {
     popupMessage.textContent = message;
     popup.classList.remove("hidden");
   }
 
-  // Function to close popup
   popupClose.addEventListener("click", function () {
     popup.classList.add("hidden");
   });
@@ -96,14 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  //too-simple-right
+  // Reward 1
   const reward1btn = document.querySelector(".reward-1-btn");
-  console.log(reward1btn);
-
   reward1btn.addEventListener("click", function () {
     goToNextStep("reward1", "too-simple-right");
 
-    // Simple Right Countdown
     const countdownEl1 = document.getElementById("countdown-2");
     let seconds = 5;
     countdownEl1.textContent = `Continuing in ${seconds}...`;
@@ -119,20 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 
-  //photo-grid
-  const question1 = document.querySelector(".Question1");
-  console.log(question1);
-
-  const photo1 = document.querySelector("#photo-1");
-  console.log(photo1);
-  const photo2 = document.querySelector("#photo-2");
-  console.log(photo2);
-  const photo3 = document.querySelector("#photo-3");
-  console.log(photo3);
-  const photo4 = document.querySelector("#photo-4");
-  console.log(photo4);
-
-  // Select and highlight one photo
+  // Question 1 – Photo selection
   const selectableImages = document.querySelectorAll(".Question1 .selectable");
 
   selectableImages.forEach((img) => {
@@ -143,9 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Confirm button for Question 1
   const question1Btn = document.querySelector(".question-1-btn");
-
   question1Btn.addEventListener("click", () => {
     if (!selectedImage) {
       showPopup("Oops! Please select a photo before continuing.");
@@ -154,26 +112,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Reveal Answer
+  // Reveal
   const question1RevealBtn = document.querySelector(".question-1-reveal-btn");
-  console.log(question1RevealBtn);
-
-  const question1Reveal = document.querySelector(".Question1-reveal-1");
-  console.log(question1Reveal);
-
   question1RevealBtn.addEventListener("click", function () {
     goToNextStep("Question1-reveal", "Question1-reveal-1");
   });
 
-  const question1Revealbtn1 = document.querySelector(
-    ".question-1-reveal-btn-1"
-  );
-  console.log(question1Revealbtn1);
-
-  const question2 = document.querySelector(".Question2");
-  console.log(question2);
-
+  const question1Revealbtn1 = document.querySelector(".question-1-reveal-btn-1");
   question1Revealbtn1.addEventListener("click", function () {
     goToNextStep("Question1-reveal-1", "Question2");
+  });
+
+  // Question 2
+  const question2Input = document.querySelector(".Question2 input");
+  const question2Btn = document.querySelector(".Question2 button");
+  const finalPresent = document.querySelector(".FinalPresent");
+
+  question2Btn.addEventListener("click", function () {
+    const answer = question2Input.value.trim().toLowerCase();
+
+    if (answer === "girlfriend") {
+      goToNextStep("Question2", "FinalPresent");
+    } else {
+      showPopup("Awww... close but not quite. Try the word I want to hear from you 🥺");
+    }
   });
 });
