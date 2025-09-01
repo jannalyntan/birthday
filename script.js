@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   task1Btn.addEventListener("click", function () {
     const value = task1Input.value.trim().toLowerCase();
-    if (value === "kiss" || value === "hug") {
+    if (value === "kiss" || value === "Kiss") {
       goToNextStep("task1", "reward1");
     } else {
       showPopup("Hmm... try giving me something I can't resist 😘");
@@ -138,3 +138,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+  // Final Present → Sike
+  const finalBtn = document.getElementById("final-btn");
+  const sikeScreen = document.getElementById("sike-screen");
+  const continueScreen = document.getElementById("continue-screen");
+  const finalPresent = document.querySelector(".FinalPresent");
+
+  finalBtn.addEventListener("click", function () {
+    // Hide FinalPresent, show Sike
+    finalPresent.classList.add("hidden");
+    sikeScreen.classList.remove("hidden");
+
+    // After 3 seconds, switch to Continue
+    setTimeout(() => {
+      sikeScreen.classList.add("hidden");
+      continueScreen.classList.remove("hidden");
+    }, 1500);
+  });
+
+  // Optional: your existing final reveal logic
+  const finalRevealBtn = document.querySelector(".final-reveal-btn");
+  if (finalRevealBtn) {
+    finalRevealBtn.addEventListener("click", function () {
+      goToNextStep("Question1-reveal", "Question1-reveal-1");
+    });
+  }
+
+
