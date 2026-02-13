@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #ffeef8 0%, #ffe6f0 50%, #ffd6e8 100%);
+  background-color: #ffd1dc;
   font-family: sans-serif;
   overflow: hidden;
   position: relative;
@@ -52,7 +52,7 @@ body {
 
 .heart-back {
   transform: rotateY(180deg);
-  font-size: 6px;
+  font-size: 5px;
   color: #e63946;
   text-align: center;
 }
@@ -88,4 +88,8 @@ body {
   .heart-text {
     font-size: 4px;
   }
+}
+
+.photo {
+  border-radius: 3px;
 }
